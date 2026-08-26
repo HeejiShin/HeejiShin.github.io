@@ -599,6 +599,7 @@ a { color: inherit; }
   left: -28.651042%;
   width: 157.302083cqw;
   height: 82.8125cqw;
+  max-width: none;
 }
 
 .contact {
