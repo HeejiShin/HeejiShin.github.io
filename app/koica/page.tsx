@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 import Image from 'next/image';
 
+export const dynamic = 'force-static';
+
 const slideDescriptions = [
   'KOICA 홍보실 뉴미디어 인턴 프로젝트 개요와 담당 업무',
   'KOICA 소셜 채널 분석과 콘텐츠 성과',

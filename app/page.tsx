@@ -209,7 +209,7 @@ export default function Home() {
 
         <section className="marketing" id="marketing" aria-labelledby="marketing-title">
           <h2 id="marketing-title">PR/MARKETING PROJECT</h2>
-          <a className="koica-card" href="/koica" aria-label="KOICA 홍보실 뉴미디어 파트 인턴 상세 보기">
+          <a className="koica-card" href="/koica/" aria-label="KOICA 홍보실 뉴미디어 파트 인턴 상세 보기">
             <ProjectCard project={{
               title: 'KOICA 홍보실 뉴미디어 파트 인턴',
               subtitle: 'SNS 채널 운영 · 콘텐츠 기획/제작 · 트렌드 리서치 · 홍보 캠페인 실무',
