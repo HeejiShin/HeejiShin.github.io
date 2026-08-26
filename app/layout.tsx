@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'HeeJi SHiN | Portfolio',
   description: '사용자의 니즈와 페인포인트를 경험으로 설계하는 기획자 신희지의 포트폴리오',
   icons: {
-    icon: '/favicon.svg',
+    icon: [{ url: '/favicon-v2.png', type: 'image/png', sizes: '20x20' }],
   },
   openGraph: {
     title: 'HeeJi SHiN | Portfolio',
