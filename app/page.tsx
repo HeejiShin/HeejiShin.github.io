@@ -64,8 +64,8 @@ const skills = [
   { label: 'Google Sheets', image: '/assets/skill-06.png' },
   { label: 'Google Looker Studio', image: '/assets/skill-07.png' },
   { label: 'Google Analytics', image: '/assets/skill-08.png', large: true },
-  { label: 'Oracle', image: '/assets/skill-09.png' },
-  { label: 'Figma', image: '/assets/skill-10.png' },
+  { label: 'Oracle', image: '/assets/skill-09.png', shadow: true },
+  { label: 'Figma', image: '/assets/skill-10.png', shadow: true },
   { label: 'Tobii', image: '/assets/skill-11.png' },
 ];
 
@@ -94,7 +94,14 @@ function SkillTrack() {
         {[0, 1].map((group) => (
           <ul aria-hidden={group === 1} key={group}>
             {skills.map((skill) => (
-              <li key={`${group}-${skill.label}`}>
+              <li
+                className={[
+                  'skill-item',
+                  skill.large ? 'skill-item--large' : '',
+                  skill.shadow ? 'skill-item--shadow' : '',
+                ].filter(Boolean).join(' ')}
+                key={`${group}-${skill.label}`}
+              >
                 <Image
                   src={skill.image}
                   alt={group === 0 ? skill.label : ''}

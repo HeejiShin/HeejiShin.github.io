@@ -33,7 +33,6 @@
 * { box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: var(--header-height);
 }
 
@@ -71,6 +70,8 @@ a { color: inherit; }
   transform: translateX(-50%);
   container-type: inline-size;
   background: transparent;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .brand {
@@ -430,19 +431,28 @@ a { color: inherit; }
   height: 5.208333cqw;
   display: grid;
   place-items: center;
+  border-radius: 1.041667cqw;
 }
 
 .skill-logo {
   display: block;
   width: 5.208333cqw;
   height: 5.208333cqw;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 1.041667cqw;
 }
 
 .skill-logo--large {
   width: 6.526042cqw;
   height: 6.510417cqw;
   max-width: none;
+  border-radius: 0;
+}
+
+.skill-item--large { overflow: hidden; }
+
+.skill-item--shadow {
+  box-shadow: 0.052083cqw 0.052083cqw 0.520833cqw rgb(0 0 0 / 10%);
 }
 
 .skills-marquee:hover .skills-track { animation-play-state: paused; }
@@ -477,6 +487,13 @@ a { color: inherit; }
   max-width: none;
   object-fit: cover;
   border-radius: 1.041667cqw;
+  transform-origin: center;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+@media (hover: hover) {
+  .project-card__image:hover { transform: scale(1.08); }
 }
 
 .project-card h3 {
@@ -519,6 +536,8 @@ a { color: inherit; }
   outline: 0.104167cqw solid var(--blue);
   outline-offset: 0.260417cqw;
 }
+
+.koica-card:focus-visible .project-card__image { transform: scale(1.08); }
 
 .contact-white-art {
   z-index: 1;
@@ -871,12 +890,16 @@ a { color: inherit; }
   .skill-logo {
     width: 72px;
     height: 72px;
+    border-radius: 14px;
   }
 
   .skill-logo--large {
     width: 90px;
     height: 90px;
+    border-radius: 0;
   }
+
+  .skill-item--shadow { box-shadow: 1px 1px 10px rgb(0 0 0 / 10%); }
 
   .projects,
   .marketing {
