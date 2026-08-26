@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import RevealOnViewImage from './reveal-on-view-image';
 
 const awards = [
   {
@@ -139,7 +140,7 @@ export default function Home() {
 
         <section className="about" id="about" aria-labelledby="about-title">
           <Image className="about-white-art" src="/assets/about-white.svg" alt="" width={3380} height={1770} unoptimized />
-          <Image className="about-blue-art" src="/assets/about-blue.svg" alt="" width={200} height={200} unoptimized />
+          <RevealOnViewImage className="about-blue-art" src="/assets/about-blue.svg" width={200} height={200} />
           <h2 id="about-title">ABOUT ME</h2>
 
           <section className="resume-block work-block">

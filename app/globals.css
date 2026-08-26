@@ -167,8 +167,39 @@ a { color: inherit; }
   height: 36.458333cqw;
 }
 
-.hero-art--blue { left: 42.708333%; }
-.hero-art--white { left: 20.833333%; }
+.hero-art--blue {
+  left: 42.708333%;
+  animation: hero-circle-from-right 600ms ease-out both;
+}
+
+.hero-art--white {
+  left: 20.833333%;
+  animation: hero-circle-from-left 600ms ease-out both;
+}
+
+@keyframes hero-circle-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-circle-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 .hero h1 {
   position: absolute;
@@ -244,6 +275,20 @@ a { color: inherit; }
   left: 47.395833%;
   width: 5.208333cqw;
   height: 5.208333cqw;
+}
+
+.reveal-on-view {
+  opacity: 0;
+  transform: scale(0.5);
+  transform-origin: center;
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms ease-out;
+}
+
+.reveal-on-view.is-revealed {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .about h2,
@@ -1103,6 +1148,16 @@ a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+
+  .hero-art--blue,
+  .hero-art--white,
+  .reveal-on-view,
+  .reveal-on-view.is-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
