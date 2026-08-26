@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Header from './header';
 
 const awards = [
   {
@@ -122,8 +121,6 @@ function SkillTrack() {
 export default function Home() {
   return (
     <main id="top">
-      <Header />
-
       <div className="portfolio-shell">
         <section className="hero" aria-labelledby="hero-title">
           <Image className="hero-art hero-art--blue" src="/assets/hero-blue.svg" alt="" width={700} height={700} priority unoptimized />
