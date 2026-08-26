@@ -219,7 +219,7 @@ export default function Home() {
         <section className="contact" id="contact" aria-labelledby="contact-title">
           <h2 id="contact-title" className="sr-only">CONTACT</h2>
           <Image className="contact-white-art" src="/assets/contact-blue.svg" alt="" width={3020} height={1590} unoptimized />
-          <Image className="contact-blue-art" src="/assets/contact-white.svg" alt="" width={200} height={200} unoptimized />
+          <RevealOnViewImage className="contact-blue-art" src="/assets/contact-white.svg" width={200} height={200} />
           <div className="contact-details">
             <div className="contact-email"><strong>E - M A I L</strong><a href="mailto:heeji.shin@gmail.com">heeji.shin@gmail.com</a></div>
             <div className="contact-tel"><strong>Tel</strong><a href="tel:+821023171194">+82 010-2317-1194</a></div>

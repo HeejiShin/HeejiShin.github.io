@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     images: [{
-      url: '/heeji-social-preview-v2.png',
+      url: '/heeji-social-preview-v3.png',
       width: 1200,
       height: 630,
       alt: 'HeeJi SHiN Portfolio',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'HeeJi SHiN | Portfolio',
     description: '문제와 니즈를 발견하고, 경험으로 설계해, 가치를 확산합니다.',
-    images: ['/heeji-social-preview-v2.png'],
+    images: ['/heeji-social-preview-v3.png'],
   },
 };
 

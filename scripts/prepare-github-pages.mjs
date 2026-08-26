@@ -22,7 +22,7 @@ const requiredFiles = [
   '404.html',
   'koica/index.html',
   'koica-2/index.html',
-  'heeji-social-preview-v2.png',
+  'heeji-social-preview-v3.png',
 ];
 
 await Promise.all(requiredFiles.map((file) => stat(path.join(outputRoot, file))));
