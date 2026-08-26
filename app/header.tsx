@@ -21,7 +21,13 @@ function moveTo(event: MouseEvent<HTMLAnchorElement>, id: string) {
 
 export default function Header() {
   return (
-    <header className="site-header">
+    <header
+      className="site-header"
+      style={{
+        backdropFilter: 'blur(var(--header-blur, 20px))',
+        WebkitBackdropFilter: 'blur(var(--header-blur, 20px))',
+      }}
+    >
       <a className="brand" href="#top" aria-label="홈으로 이동" onClick={(event) => moveTo(event, 'top')}>HeeJi SHiN</a>
       <nav className="desktop-nav" aria-label="주요 메뉴">
         {links.map(([id, label]) => (
