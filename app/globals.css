@@ -450,6 +450,11 @@ a { color: inherit; }
 
 .skill-item--large { overflow: hidden; }
 
+.skill-item--sheets {
+  overflow: hidden;
+  background: #34a853;
+}
+
 .skill-item--shadow {
   box-shadow: 0.052083cqw 0.052083cqw 0.520833cqw rgb(0 0 0 / 10%);
 }

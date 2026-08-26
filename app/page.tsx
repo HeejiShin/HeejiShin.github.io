@@ -56,17 +56,17 @@ const projects = [
 ];
 
 const skills = [
-  { label: 'Maze', image: '/assets/skill-01.png' },
-  { label: 'Photoshop', image: '/assets/skill-02.png' },
-  { label: 'Illustrator', image: '/assets/skill-03.png' },
-  { label: 'Premiere Pro', image: '/assets/skill-04.png' },
-  { label: 'After Effects', image: '/assets/skill-05.png' },
-  { label: 'Google Sheets', image: '/assets/skill-06.png' },
-  { label: 'Google Looker Studio', image: '/assets/skill-07.png' },
-  { label: 'Google Analytics', image: '/assets/skill-08.png', large: true },
-  { label: 'Oracle', image: '/assets/skill-09.png', shadow: true },
-  { label: 'Figma', image: '/assets/skill-10.png', shadow: true },
-  { label: 'Tobii', image: '/assets/skill-11.png' },
+  { label: 'Figma', image: '/assets/skill-01.png' },
+  { label: 'Tobii', image: '/assets/skill-02.png' },
+  { label: 'Maze', image: '/assets/skill-03.png' },
+  { label: 'Photoshop', image: '/assets/skill-04.png' },
+  { label: 'Illustrator', image: '/assets/skill-05.png' },
+  { label: 'Premiere Pro', image: '/assets/skill-06.png' },
+  { label: 'After Effects', image: '/assets/skill-07.png' },
+  { label: 'Google Sheets', image: '/assets/skill-08.png', large: true, sheets: true },
+  { label: 'Google Looker Studio', image: '/assets/skill-09.png', shadow: true },
+  { label: 'Google Analytics', image: '/assets/skill-10.png', shadow: true },
+  { label: 'Oracle', image: '/assets/skill-11.png' },
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
@@ -99,6 +99,7 @@ function SkillTrack() {
                   'skill-item',
                   skill.large ? 'skill-item--large' : '',
                   skill.shadow ? 'skill-item--shadow' : '',
+                  skill.sheets ? 'skill-item--sheets' : '',
                 ].filter(Boolean).join(' ')}
                 key={`${group}-${skill.label}`}
               >
