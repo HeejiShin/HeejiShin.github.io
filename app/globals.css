@@ -509,8 +509,6 @@ a { color: inherit; }
   box-shadow: 0.052083cqw 0.052083cqw 0.520833cqw rgb(0 0 0 / 10%);
 }
 
-.skills-marquee:hover .skills-track { animation-play-state: paused; }
-
 .projects {
   z-index: auto;
   top: 118.75cqw;
