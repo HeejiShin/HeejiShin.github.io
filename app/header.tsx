@@ -33,17 +33,17 @@ export default function Header() {
         WebkitBackdropFilter: 'blur(var(--header-blur, 20px))',
       }}
     >
-      <Link className="brand" href="/" aria-label="홈으로 이동" onClick={(event) => moveTo(event, 'top')}>HeeJi SHiN</Link>
+      <Link className="brand" href="/" prefetch={false} aria-label="홈으로 이동" onClick={(event) => moveTo(event, 'top')}>HeeJi SHiN</Link>
       <nav className="desktop-nav" aria-label="주요 메뉴">
         {links.map(([id, label]) => (
-          <Link href={`/#${id}`} onClick={(event) => moveTo(event, id)} key={id}>{label}</Link>
+          <Link href={`/#${id}`} prefetch={false} onClick={(event) => moveTo(event, id)} key={id}>{label}</Link>
         ))}
       </nav>
       <details className="mobile-nav">
         <summary>MENU</summary>
         <nav aria-label="모바일 메뉴">
           {links.map(([id, label]) => (
-            <Link href={`/#${id}`} onClick={(event) => moveTo(event, id)} key={id}>{label}</Link>
+            <Link href={`/#${id}`} prefetch={false} onClick={(event) => moveTo(event, id)} key={id}>{label}</Link>
           ))}
         </nav>
       </details>
