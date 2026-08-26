@@ -457,6 +457,7 @@ a { color: inherit; }
 .skill-item--large {
   position: relative;
   overflow: hidden;
+  background: #34a553;
 }
 
 .skill-item--shadow {
