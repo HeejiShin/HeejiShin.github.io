@@ -443,13 +443,21 @@ a { color: inherit; }
 }
 
 .skill-logo--large {
-  width: 6.526042cqw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6.523386cqw;
   height: 6.510417cqw;
   max-width: none;
+  object-fit: fill;
   border-radius: 0;
+  transform: translate(-50%, -50%);
 }
 
-.skill-item--large { overflow: hidden; }
+.skill-item--large {
+  position: relative;
+  overflow: hidden;
+}
 
 .skill-item--shadow {
   box-shadow: 0.052083cqw 0.052083cqw 0.520833cqw rgb(0 0 0 / 10%);
@@ -893,7 +901,7 @@ a { color: inherit; }
   }
 
   .skill-logo--large {
-    width: 90px;
+    width: 90.179283px;
     height: 90px;
     border-radius: 0;
   }
