@@ -27,7 +27,7 @@
 :root {
   --blue: #2b7fff;
   --ink: #000;
-  --header-height: min(6.25vw, 120px);
+  --header-height: 100px;
 }
 
 * { box-sizing: border-box; }
@@ -67,39 +67,42 @@ a { color: inherit; }
   left: 50%;
   width: min(100%, 1920px);
   height: var(--header-height);
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px clamp(80px, 10.974vw, 160px);
   transform: translateX(-50%);
   container-type: inline-size;
   background: transparent;
 }
 
 .brand {
-  position: absolute;
-  top: 1.421875cqw;
-  left: 8.333333%;
+  position: relative;
+  flex: 0 0 auto;
   text-decoration: none;
   font-family: 'Heeji Noto Sans', sans-serif;
-  font-size: 2.5cqw;
+  font-size: clamp(32px, 2.7435vw, 40px);
   line-height: 1.364583;
   font-weight: 900;
-  letter-spacing: -0.05cqw;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .desktop-nav {
-  position: absolute;
-  top: 2.34375cqw;
-  left: 53.942708%;
+  position: relative;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 2.083333cqw;
+  gap: clamp(24px, 2.7435vw, 40px);
 }
 
 .desktop-nav a {
   text-decoration: none;
   font-family: 'Heeji Inter', sans-serif;
-  font-size: 1.041667cqw;
-  line-height: 1.5625cqw;
+  font-size: clamp(15px, 1.37175vw, 20px);
+  line-height: 1.5;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .desktop-nav a:focus-visible,
@@ -703,6 +706,7 @@ a { color: inherit; }
   }
 
   .brand {
+    position: absolute;
     top: 24px;
     left: 20px;
     font-size: 28px;
