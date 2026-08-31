@@ -393,7 +393,18 @@ a { color: inherit; }
   line-height: 1.875cqw;
 }
 
-.award-row a { text-underline-offset: 0.15625cqw; }
+.award-row a {
+  display: inline-block;
+  width: fit-content;
+  text-underline-offset: 0.15625cqw;
+  transform-origin: left center;
+  transition: transform 180ms ease-out;
+}
+
+.award-row a:hover,
+.award-row a:focus-visible {
+  transform: scale(1.06);
+}
 
 .award-row p {
   margin: 0;

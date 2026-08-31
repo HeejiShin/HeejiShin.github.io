@@ -160,7 +160,7 @@ export default function Home() {
           <section className="resume-block education-block">
             <h3>Education</h3>
             <div className="resume-row">
-              <time>21.03<br />~ 26.08</time>
+              <time>21.03<br />~ 27.02</time>
               <div>
                 <h4>성신여자대학교 서비스디자인공학과 졸업예정</h4>
                 <ul>
@@ -192,7 +192,7 @@ export default function Home() {
 
           <section className="resume-block english-block">
             <h3>English</h3>
-            <div><span>TOIEC - <strong>915점</strong></span><span>OPIC - IH</span></div>
+            <div><span>TOIEC - <strong>915점</strong></span><span>OPIC - <strong>IH</strong></span></div>
           </section>
         </section>
 
