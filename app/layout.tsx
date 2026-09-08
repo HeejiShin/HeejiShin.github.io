@@ -1,8 +1,15 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Header from './header';
 
 export const dynamic = 'force-static';
+
+export const viewport: Viewport = {
+  width: 1920,
+  initialScale: 0.2,
+  minimumScale: 0.1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://heejishin.github.io'),
