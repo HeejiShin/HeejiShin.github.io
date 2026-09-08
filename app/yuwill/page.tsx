@@ -6,7 +6,7 @@ export default function YuwillPage() {
   return (
     <CaseStudyPage
       title="빅데이터 기반 배리어프리 맵핑 커뮤니티 서비스 유윌"
-      image="/assets/case-yuwill.jpg"
+      image="/assets/case-yuwill.png"
       height={11740}
       videos={[{
         src: 'https://www.youtube.com/embed/SUg8D5j20ho',

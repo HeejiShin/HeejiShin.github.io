@@ -6,7 +6,7 @@ export default function WonhanaPage() {
   return (
     <CaseStudyPage
       title="증권뉴비 올인원 플랫폼 원하나"
-      image="/assets/case-wonhana.jpg"
+      image="/assets/case-wonhana.png"
       height={10800}
       videos={[{
         src: 'https://www.youtube.com/embed/rsDB94e3pzY',
