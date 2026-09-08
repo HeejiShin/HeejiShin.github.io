@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import RevealOnViewImage from './reveal-on-view-image';
+import ResponsiveImage from './responsive-image';
 
 const awards = [
   {
@@ -78,14 +79,15 @@ const skills = [
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   const card = (
     <article className="project-card">
-      <Image
-        src={project.image}
+      <ResponsiveImage
+        base={`/assets/optimized/${project.image.split('/').pop()?.replace(/\.png$/, '')}/${project.image.split('/').pop()?.replace(/\.png$/, '')}`}
         alt={project.title}
         width={1920}
         height={1080}
-        sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1920px) 39.17vw, 752px"
         className="project-card__image"
-        unoptimized
+        mobileWidth={640}
+        standardWidth={960}
+        retinaWidth={1920}
       />
       <h3>{project.title}</h3>
       <p>{project.subtitle}</p>

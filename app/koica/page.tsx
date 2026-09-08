@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import Image from 'next/image';
+import LazyVideo from '../lazy-video';
+import ResponsiveImage from '../responsive-image';
 
 export const dynamic = 'force-static';
 
@@ -62,33 +63,32 @@ const videos = [
 
 export default function KoicaPage() {
   return (
-    <main className="case-study">
+    <main className="case-study case-study--full-image">
       <h1 className="sr-only">KOICA 홍보실 뉴미디어 파트 인턴</h1>
 
       <div className="case-study-canvas" role="region" aria-label="KOICA 홍보실 뉴미디어 인턴 프로젝트 상세">
         <a className="case-study__home-hit" href="/" aria-label="포트폴리오 홈으로 돌아가기" />
-        {slides.map((slide) => (
-          <Image
+        {slides.map((slide, index) => (
+          <ResponsiveImage
             className="case-study-slice"
-            src={slide.src}
+            base={`/assets/optimized/${slide.src.split('/').pop()?.replace(/\.png$/, '')}/${slide.src.split('/').pop()?.replace(/\.png$/, '')}`}
             alt={slide.alt}
             width={3840}
             height={2160}
-            sizes="100vw"
-            unoptimized
             key={slide.src}
+            mobileWidth={1280}
+            standardWidth={1920}
+            retinaWidth={3840}
+            priority={index === 0}
           />
         ))}
 
         {videos.map((video) => (
-          <iframe
+          <LazyVideo
             className="case-video"
             key={video.src}
             src={video.src}
             title={video.title}
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
             style={{
               left: `${(video.x / 1920) * 100}%`,
               top: `${(video.y / 6480) * 100}%`,
@@ -99,41 +99,6 @@ export default function KoicaPage() {
         ))}
       </div>
 
-      <article className="case-study-mobile">
-        <a className="case-study-mobile__back" href="/">← HOME</a>
-        <Image
-          src="/assets/project-koica.png"
-          alt="KOICA 홍보실 뉴미디어 파트 인턴"
-          width={1920}
-          height={1080}
-          sizes="calc(100vw - 40px)"
-          unoptimized
-        />
-        <p className="case-study-mobile__eyebrow">2025.07 ~ 2025.12 · 기여도 100%</p>
-        <h2>KOICA(한국국제협력단)<br />홍보실 뉴미디어 파트 인턴</h2>
-        <section>
-          <h3>OUTPUT</h3>
-          <p>트렌드 리서치<br />SNS 채널 운영 및 성과 관리<br />콘텐츠 기획 · 촬영 · 편집<br />국제 행사 홍보 캠페인 운영 지원</p>
-        </section>
-        <section>
-          <h3>Performance &amp; Impact</h3>
-          <p><strong>Instagram +21% 성장 · 채널 퍼포먼스 최대 15.1배 · 204K+ 콘텐츠 조회</strong></p>
-          <p>데이터와 트렌드를 콘텐츠로 연결해 채널의 성장까지 만들었습니다.</p>
-        </section>
-        <section className="case-study-mobile__videos">
-          <h3>SELECTED CONTENTS</h3>
-          {videos.map((video, index) => (
-            <a
-              key={`mobile-${video.src}`}
-              href={video.src.replace('https://www.youtube.com/embed/', 'https://www.youtube.com/watch?v=').split('?si=')[0]}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {String(index + 1).padStart(2, '0')} · {video.title} ↗
-            </a>
-          ))}
-        </section>
-      </article>
     </main>
   );
 }
