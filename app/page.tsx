@@ -33,7 +33,7 @@ const projects = [
     title: '긍정적인 습관 형성을 돕는 AI 습관 추천 서비스 ‘TITA’',
     subtitle: '영문 리서치 · 데이터 분석 · AI 활용 기획 · UX 설계',
     image: '/assets/project-tita.png',
-    href: undefined,
+    href: '/티타/',
   },
   {
     title: '모의에서 실전까지 증권뉴비 올인원 플랫폼 ‘원하나’',
