@@ -27,31 +27,37 @@ const projects = [
     title: "빅데이터 기반 배리어프리 맵핑 커뮤니티 서비스 ‘유윌'",
     subtitle: '2024 대학생 디자인 학술발표대회(DSUS) 우수상',
     image: '/assets/project-yuwill.png',
+    href: '/유윌/',
   },
   {
     title: '긍정적인 습관 형성을 돕는 AI 습관 추천 서비스 ‘TITA’',
     subtitle: '영문 리서치 · 데이터 분석 · AI 활용 기획 · UX 설계',
     image: '/assets/project-tita.png',
+    href: undefined,
   },
   {
     title: '모의에서 실전까지 증권뉴비 올인원 플랫폼 ‘원하나’',
     subtitle: '금융 서비스 기획 프로젝트',
     image: '/assets/project-wonhana.png',
+    href: '/원하나/',
   },
   {
     title: "느린학습자의 자립을 돕는 AI 일상 훈련 서비스 ‘터틀링'",
     subtitle: '제 60회 대한민국 디자인 전람회 입선',
     image: '/assets/project-turtling.png',
+    href: '/터틀링/',
   },
   {
     title: '아파트 내 공유형 스마트팜 서비스 ‘Gruu’',
     subtitle: '기업 연계 산학협력 프로젝트 1위 선정',
     image: '/assets/project-gruu.png',
+    href: '/그루/',
   },
   {
     title: '국립중앙도서관 웹페이지 사용성 개선 프로젝트',
     subtitle: 'Tobii 아이트래킹 · Maze 사용성 테스트 · UX 개선',
     image: '/assets/project-library.png',
+    href: '/국중도/',
   },
 ];
 
@@ -70,7 +76,7 @@ const skills = [
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[number] }) {
-  return (
+  const card = (
     <article className="project-card">
       <Image
         src={project.image}
@@ -84,6 +90,14 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       <h3>{project.title}</h3>
       <p>{project.subtitle}</p>
     </article>
+  );
+
+  if (!project.href) return card;
+
+  return (
+    <a className="project-card-link" href={project.href} aria-label={`${project.title} 상세 보기`}>
+      {card}
+    </a>
   );
 }
 

@@ -2,14 +2,22 @@ import { copyFile, mkdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const outputRoot = path.resolve('dist/client');
-const routes = ['koica', 'koica-2'];
+const routes = [
+  { source: 'koica', destination: 'koica' },
+  { source: 'koica-2', destination: 'koica-2' },
+  { source: 'yuwill', destination: '유윌' },
+  { source: 'wonhana', destination: '원하나' },
+  { source: 'turtling', destination: '터틀링' },
+  { source: 'gruu', destination: '그루' },
+  { source: 'library', destination: '국중도' },
+];
 
 await Promise.all(
-  routes.map(async (route) => {
-    const routeDirectory = path.join(outputRoot, route);
+  routes.map(async ({ source, destination }) => {
+    const routeDirectory = path.join(outputRoot, destination);
     await mkdir(routeDirectory, { recursive: true });
     await copyFile(
-      path.join(outputRoot, `${route}.html`),
+      path.join(outputRoot, `${source}.html`),
       path.join(routeDirectory, 'index.html'),
     );
   }),
@@ -22,6 +30,11 @@ const requiredFiles = [
   '404.html',
   'koica/index.html',
   'koica-2/index.html',
+  '유윌/index.html',
+  '원하나/index.html',
+  '터틀링/index.html',
+  '그루/index.html',
+  '국중도/index.html',
   'heeji-social-preview-v3.png',
 ];
 

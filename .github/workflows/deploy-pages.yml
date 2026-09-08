@@ -45,6 +45,11 @@ jobs:
           test -f dist/client/index.html
           test -f dist/client/koica/index.html
           test -f dist/client/koica-2/index.html
+          test -f dist/client/유윌/index.html
+          test -f dist/client/원하나/index.html
+          test -f dist/client/터틀링/index.html
+          test -f dist/client/그루/index.html
+          test -f dist/client/국중도/index.html
           test -f dist/client/404.html
           test -n "$(find dist/client/_next/static -type f -print -quit)"
 
