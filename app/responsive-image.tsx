@@ -24,7 +24,7 @@ export default function ResponsiveImage({
   return (
     <picture className="responsive-picture">
       <source
-        media="(max-device-width: 1024px)"
+        media="(max-width: 1024px)"
         srcSet={`${base}-${mobileWidth}.webp`}
         type="image/webp"
       />

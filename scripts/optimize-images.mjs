@@ -11,7 +11,6 @@ const caseStudies = [
   { name: 'case-wonhana', height: 10800 },
   { name: 'case-turtling', height: 9640 },
   { name: 'case-gruu', height: 11360 },
-  { name: 'case-library', height: 4320 },
 ];
 
 const projectImages = [
@@ -26,6 +25,10 @@ const projectImages = [
 
 const koicaSlides = Array.from({ length: 6 }, (_, index) =>
   `koica-${String(index + 1).padStart(2, '0')}`,
+);
+
+const librarySlides = Array.from({ length: 9 }, (_, index) =>
+  `library-${String(index + 1).padStart(2, '0')}`,
 );
 
 const webpOptions = {
@@ -87,6 +90,11 @@ for (const image of projectImages) {
 }
 
 for (const slide of koicaSlides) {
+  console.log(`Optimizing ${slide}…`);
+  await createResponsiveImage(slide, [1280, 1920, 3840]);
+}
+
+for (const slide of librarySlides) {
   console.log(`Optimizing ${slide}…`);
   await createResponsiveImage(slide, [1280, 1920, 3840]);
 }
