@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Header from './header';
+import Script from 'next/script';
 
 export const dynamic = 'force-static';
 
@@ -41,6 +42,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
+      <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-QQE0GE88P6"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QQE0GE88P6');
+  `}
+</Script>
       <body>
         <Header />
         {children}
